@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .align-elements {
+    @apply max-w-screen-2xl mx-auto px-8 py-5;
+  }
+}
+
+.red {
+  background: rgba(236, 0, 0, 1);
+}
+
+.color_red {
+  color: rgba(236, 0, 0, 1);
+}
