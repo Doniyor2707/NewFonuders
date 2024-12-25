@@ -7,7 +7,7 @@ import Flag from "../../../public/assets/Flag.png";
 function Navbar() {
   return (
     <div className="red">
-      <div className="navbar align-elements">
+      <div className="navbar align-elements navbar_font ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden px-0">
@@ -75,11 +75,11 @@ function Navbar() {
               </details>
             </li>
             <li>
-              <a className="uppercase text-lg text-white">O‘qituvchilarimiz</a>
+              <a className="uppercase text-base text-white">O‘qituvchilarimiz</a>
             </li>
             <li>
               <details>
-                <summary className="uppercase text-lg text-white">
+                <summary className="uppercase text-base text-white">
                   Kurslarimiz
                 </summary>
                 <ul className="p-2">
@@ -94,13 +94,13 @@ function Navbar() {
             </li>
 
             <li>
-              <a className="uppercase text-lg text-white">Kitoblarimiz</a>
+              <a className="uppercase text-base text-white">Kitoblarimiz</a>
             </li>
             <li>
-              <a className="uppercase text-lg text-white">faq</a>
+              <a className="uppercase text-base text-white">faq</a>
             </li>
             <li>
-              <a className="uppercase text-lg text-white">Kontakt</a>
+              <a className="uppercase text-base text-white">Kontakt</a>
             </li>
           </ul>
         </div>
@@ -109,7 +109,7 @@ function Navbar() {
             <img src={Flag} alt="Bayroq" />
           </a>
 
-          <a className="btn color_red w-24 text-lg xl:w-40 xl:h-11 xl:text-xl font-medium">
+          <a className="btn color_red w-24 text-base xl:w-32 xl:h-11 xl:text-xl font-medium global_font">
             Kirish
           </a>
         </div>
