@@ -12,9 +12,32 @@
   @font-face {
     font-family: "Montserrat";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-display: swap;
     src: url(../public/fonts/Montserrat-Medium.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../public/fonts/Montserrat-Regular.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../public/fonts/Montserrat-Bold.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(../public/fonts/Montserrat-SemiBold.woff2) format("woff2");
   }
 }
 
@@ -26,20 +49,85 @@
     font-display: swap;
     src: url(../public/fonts/AquireLight-YzE0o.woff2) format("woff2");
   }
+
+  @font-face {
+    font-family: "Aquire";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../public/fonts/AquireBold-8Ma60.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Aquire";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(../public/fonts/Aquire-BW0ox.woff2) format("woff2");
+  }
 }
 
 .red {
   background: rgba(236, 0, 0, 1);
 }
 
+.white_color {
+  color: rgba(255, 255, 255, 1);
+}
+
 .color_red {
   color: rgba(236, 0, 0, 1);
 }
 
-.navbar_font {
-  font-family: "Aquire";
+.bg_red_100 {
+  background-color: rgba(255, 178, 178, 1);
 }
 
-.global_font {
+.aquire_font_400 {
+  font-family: "Aquire";
+  font-weight: 400;
+}
+
+.aquire_font_600 {
+  font-family: "Aquire";
+  font-weight: 600;
+}
+
+.aquire_font_700 {
+  font-family: "Aquire";
+  font-weight: 700;
+}
+
+.montserrat_font_400 {
   font-family: "Montserrat";
+  font-weight: 400;
+}
+
+.montserrat_font_500 {
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+.montserrat_font_700 {
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+
+.montserrat_font_800 {
+  font-family: "Montserrat";
+  font-weight: 800;
+}
+
+.montserrat_font_600 {
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+:root {
+  --primary-color: rgba(34, 34, 34, 1);
+  --primary-color-red: rgba(236, 0, 0, 1);
+  --primary-color-white: rgba(255, 255, 255, 1);
+
+  /* font */
+  --font-aquire: "Aquire", sans-serif;
 }

@@ -1,0 +1,57 @@
+.collections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+.collectionsList {
+  font-family: "Montserrat";
+  width: 100%; /* Let the grid handle width */
+  z-index: -1;
+  padding: 30px 0;
+  padding-left: 30px;
+  background-color: rgba(255, 178, 178, 1);
+  border-radius: 25px;
+  background-image: url("../public/assets/star.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+}
+
+.num {
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--primary-color-red);
+}
+
+.title {
+  font-weight: 400;
+  font-family: "Montserrat";
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+  .collections {
+    grid-template-columns: repeat(auto-fit, minmax(127px, 1fr));
+    margin-bottom: 40px;
+  }
+
+  .collectionsList {
+    padding: 16px 0;
+    padding-left: 16px;
+    border-radius: 10px;
+  }
+
+  .num {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

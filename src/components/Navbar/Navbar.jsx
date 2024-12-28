@@ -3,15 +3,20 @@ import { Link } from "react-router-dom";
 import Logo from "../../../public/assets/logo.png";
 import LogoMobile from "../../../public/assets/LogoMobile.svg";
 import Flag from "../../../public/assets/Flag.png";
+import Button from "../ui/Button/Button";
 
 function Navbar() {
   return (
-    <div className="red">
-      <div className="navbar align-elements navbar_font ">
+    <div className="red mb-9">
+      <div className="navbar align-elements aquire_font_400">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden px-0">
-              <img src={LogoMobile} alt="MobileVersionLogo"/>
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden px-0"
+            >
+              <img src={LogoMobile} alt="MobileVersionLogo" />
             </div>
             <ul
               tabIndex={0}
@@ -75,7 +80,9 @@ function Navbar() {
               </details>
             </li>
             <li>
-              <a className="uppercase text-base text-white">O‘qituvchilarimiz</a>
+              <a className="uppercase text-base text-white">
+                O‘qituvchilarimiz
+              </a>
             </li>
             <li>
               <details>
@@ -109,9 +116,7 @@ function Navbar() {
             <img src={Flag} alt="Bayroq" />
           </a>
 
-          <a className="btn color_red w-24 text-base xl:w-32 xl:h-11 xl:text-xl font-medium global_font">
-            Kirish
-          </a>
+          <Button title={"Kirish"} />
         </div>
       </div>
     </div>
