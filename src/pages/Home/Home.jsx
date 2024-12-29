@@ -1,16 +1,22 @@
-import { About, Collections, Titile } from "../../components";
+import { About, Collections, News, Titile } from "../../components";
 
 function Home() {
   return (
-    <div className="align-elements">
-      {/* hero */}
+    <>
+      <div className="align-elements">
+        {/* hero */}
 
-      <Collections />
+        <Collections />
 
-      <Titile title={"Biz haqimizda"} />
+        <Titile title={"Biz haqimizda"} />
 
-      <About />
-    </div>
+        <About />
+
+        <Titile title={"o‘qituvchilarimiz:"} />
+      </div>
+
+      <News />
+    </>
   );
 }
 
