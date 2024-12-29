@@ -1,4 +1,4 @@
-import { About, Collections, News, Titile } from "../../components";
+import { About, Collections, Faq, News, Titile } from "../../components";
 
 function Home() {
   return (
@@ -16,6 +16,8 @@ function Home() {
       </div>
 
       <News />
+
+      <Faq />
     </>
   );
 }
