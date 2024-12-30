@@ -67,6 +67,22 @@
   }
 }
 
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
 .red {
   background: rgba(236, 0, 0, 1);
 }
@@ -121,6 +137,14 @@
 .montserrat_font_600 {
   font-family: "Montserrat";
   font-weight: 600;
+}
+
+.box_shadow_1 {
+  box-shadow: 0px 20px 10px 0px rgba(255, 0, 0, 0.25) inset;
+}
+
+.box_shadow_2 {
+  box-shadow: 0px -20px 10px 0px rgba(255, 0, 0, 0.25) inset;
 }
 
 :root {

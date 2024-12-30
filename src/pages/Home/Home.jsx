@@ -1,4 +1,11 @@
-import { About, Collections, Faq, News, Titile } from "../../components";
+import {
+  About,
+  Collections,
+  Faq,
+  News,
+  Teachers,
+  Titile,
+} from "../../components";
 
 function Home() {
   return (
@@ -13,6 +20,8 @@ function Home() {
         <About />
 
         <Titile title={"o‘qituvchilarimiz:"} />
+
+        <Teachers />
       </div>
 
       <News />
