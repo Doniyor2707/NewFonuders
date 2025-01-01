@@ -19,7 +19,7 @@ function Home() {
 
         <About />
 
-        <Titile title={"o‘qituvchilarimiz:"} />
+        <Titile title={"o‘qituvchilarimiz"} />
 
         <Teachers />
       </div>

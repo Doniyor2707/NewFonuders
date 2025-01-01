@@ -1,5 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
+// Default theme
+import "@splidejs/react-splide/css";
+
+// or other themes
+import "@splidejs/react-splide/css/skyblue";
+import "@splidejs/react-splide/css/sea-green";
+
+// or only core styles
+import "@splidejs/react-splide/css/core";
 import Home from "./pages/Home/Home";
 
 function App() {
