@@ -7,6 +7,7 @@ export { default as Collections } from "./Main/Collections/Collections";
 export { default as News } from "./Main/News/News";
 export { default as Faq } from "./Main/Faq/Faq";
 export { default as Teachers } from "./Main/Teachers/Teachers";
+export { default as Library } from "./Main/Library/Library";
 
 // ui
 export { default as Button } from "./ui/Button/Button";

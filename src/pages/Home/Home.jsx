@@ -2,6 +2,7 @@ import {
   About,
   Collections,
   Faq,
+  Library,
   News,
   Teachers,
   Titile,
@@ -22,6 +23,10 @@ function Home() {
         <Titile title={"o‘qituvchilarimiz"} />
 
         <Teachers />
+
+        <Titile title={"kitoblarimiz"} />
+
+        <Library />
       </div>
 
       <News />

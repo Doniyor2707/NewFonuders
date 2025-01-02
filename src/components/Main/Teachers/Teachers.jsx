@@ -11,7 +11,6 @@ import TeachersCard from "./TeachersCard";
 // styles
 import styles from "./Teachers.module.css";
 
-
 const teachersData = [
   {
     img: Teacher1,
