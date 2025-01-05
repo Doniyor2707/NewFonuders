@@ -19,7 +19,6 @@ function Footer() {
           <p className="font-bold">
            Founders Ltd.
             <br />
-            Providing reliable tech since 1992
           </p>
           <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside>

@@ -1,0 +1,132 @@
+.imgContent {
+  border: 1px solid rgba(236, 0, 0, 1);
+  transform: rotate(-6deg);
+  position: relative;
+  border-radius: 60px;
+}
+
+.btn {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 35px;
+
+  /* color */
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(236, 0, 0, 1);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(255, 122, 122);
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.primary {
+  background-color: #dc2626;
+  color: white;
+}
+
+.primary:hover {
+  background-color: #b91c1c;
+}
+
+.primary:active {
+  background-color: #991b1b;
+}
+
+.secondary {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.secondary:hover {
+  background-color: #fecaca;
+}
+
+.secondary:active {
+  background-color: #fca5a5;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 150px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 10px 20px;
+    border-radius: 3px;
+  }
+}
+
+/* media query */
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .heroImg {
+    max-width: 100%;
+  }
+
+  .imgContent {
+    border-radius: 30px;
+  }
+
+  .imgRating {
+    border-radius: 40px;
+    width: 100%;
+    box-shadow: 15px 15px 3px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .imgContent {
+    border-radius: 20px;
+    transform: rotate(-6deg);
+  }
+
+  .imgRating {
+    border-radius: 30px;
+  }
+}

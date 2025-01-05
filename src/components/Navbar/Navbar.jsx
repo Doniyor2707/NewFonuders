@@ -112,6 +112,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="navbar-end flex xl:gap-10 gap-4">
+          
           <a className="w-8 xl:w-11">
             <img src={Flag} alt="Bayroq" />
           </a>
