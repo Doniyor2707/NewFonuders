@@ -18,42 +18,36 @@ const teachersData = [
     Experience: "4 years+",
     position: "ESL Teacher IELTS Instructor",
   },
-
   {
     img: Teacher2,
     teacher: "Kambarova Omina",
     Experience: "2 years+",
     position: "ESL Teacher",
   },
-
   {
     img: Teacher3,
     teacher: "Yusupov Bunyodbek",
     Experience: "1 years+",
     position: "ESL Teacher",
   },
-
   {
     img: Teacher5,
     teacher: "Abdumalikova Parizoda",
     Experience: "7 years+",
     position: "ESL Teacher",
   },
-
   {
     img: Teacher6,
     teacher: "Asadova Zarrina",
     Experience: "15 years+",
     position: "ESL Teacher",
   },
-
   {
     img: Teacher7,
     teacher: "Karajanova Kamila",
     Experience: "2.5 years+",
     position: "ESL Teacher",
   },
-
   {
     img: Teacher8,
     teacher: "Abatbaeva Sarbina",
@@ -66,9 +60,10 @@ function Teachers() {
   return (
     <div className={styles.teacher}>
       <Splide
-        aria-label="My Favorite Images"
+        aria-label="Teachers Slider"
         options={{
           perPage: 3,
+          focus: "center",
           breakpoints: {
             768: { perPage: 2 },
             480: { perPage: 3 },
