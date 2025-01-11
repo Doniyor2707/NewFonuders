@@ -1,0 +1,91 @@
+/* Main container */
+.course-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Course card styling */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0px auto;
+  padding: 30px;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid rgba(236, 0, 0, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.cardContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 25px rgba(255, 0, 0, 0.25),
+    inset 0px 8px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* Header section */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-header h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* Content section */
+.card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card-content img {
+  width: 20px;
+  height: 20px;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.card-content b {
+  color: #e60000; /* Primary color for bold text */
+}
+
+@media (max-width: 480px) {
+  .card {
+    gap: 7px;
+
+    border: none;
+    padding: 18px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 10.78px 6.23px 0px rgba(255, 0, 0, 0.25) inset,
+      0px -10.79px 6.23px 0px rgba(255, 0, 0, 0.25) inset;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+  }
+}

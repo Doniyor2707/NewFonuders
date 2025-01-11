@@ -198,15 +198,18 @@
   border-radius: 50% !important;
 }
 
-/* O‘rtadagi (is-active) element uchun */
 .splide__slide.is-active ._card_t22gx_18 {
-  transform: scale(2); /* Kattalashtirish */
-  transform: translate(10px);
+  max-width: 340px;
+  transform: scale(1.1) translate(8px, 0); /* Kattalashtirish va siljitish */
   box-shadow: 0px 10px 10px rgba(255, 0, 0, 0.5) inset,
-    /* pastki shadow */ 0px -10px 10px rgba(255, 0, 0, 0.5) inset; /* yuqori shadow */
+    /* Pastki shadow */ 0px -10px 10px rgba(255, 0, 0, 0.5) inset; /* Yuqori shadow */
   z-index: 2; /* Yuqoriroq joylashtirish */
+  overflow: hidden; /* Kartadan tashqaridagi elementlarni yashirish */
+  border-radius: 10px; /* Chekkalarni yumaloqlash */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
 }
+
 
 @media (max-width: 768px) {
   .splide {
@@ -237,7 +240,7 @@
   }
 
   .splide__slide.is-active ._card_t22gx_18 {
-
+    max-width: 100%;
     transform: translate(2px);
     box-shadow: 0px 5px 5px rgba(255, 0, 0, 0.5) inset,
       /* pastki shadow */ 0px -5px 5px rgba(255, 0, 0, 0.5) inset; /* yuqori shadow */

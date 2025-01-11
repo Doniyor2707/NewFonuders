@@ -1,6 +1,7 @@
 import {
   About,
   Collections,
+  Course,
   Faq,
   Hero,
   Library,
@@ -8,7 +9,6 @@ import {
   Teachers,
   Titile,
 } from "../../components";
-
 
 function Home() {
   return (
@@ -26,6 +26,10 @@ function Home() {
         <Titile title={"o‘qituvchilarimiz"} />
 
         <Teachers />
+
+        <Titile title={"Kurslarimiz"} />
+
+        <Course />
 
         <Titile title={"kitoblarimiz"} />
 
