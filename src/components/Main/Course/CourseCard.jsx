@@ -68,7 +68,7 @@ function CourseCard({
       </div>
       <div style={{ marginTop: "17px", textAlign: "center" }}>
         <button
-          className="btn button max-w-full md:max-w-52 py-2 px-4"
+          className="btn butto w-full md:max-w-full py-2 px-4"
           style={{ background: "rgba(236, 0, 0, 1)", color: "white" }}
         >
           Birinchi darsga yozilish
