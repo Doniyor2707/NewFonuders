@@ -29,7 +29,7 @@ function CourseCard({
     <div className={styles.card}>
       <div className={styles["card-header"]}>
         <img src={img} alt="Course Icon" />
-        <h2 className="text-6xl">{title}</h2>
+        <h2 className="text-xl">{title}</h2>
       </div>
       <div className={styles["card-content"]}>
         <img src={True} alt="icon" />
@@ -66,7 +66,7 @@ function CourseCard({
           {cabinet}
         </p>
       </div>
-      <div style={{ marginTop: "17px", textAlign: "center" }}>
+      <div style={{ marginTop: "auto", textAlign: "center" }}>
         <button
           className="btn butto w-full md:max-w-full py-2 px-4"
           style={{ background: "rgba(236, 0, 0, 1)", color: "white" }}

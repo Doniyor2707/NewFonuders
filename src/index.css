@@ -200,7 +200,7 @@
 
 .splide__slide.is-active ._card_t22gx_18 {
   max-width: 340px;
-  transform: scale(1.1) translate(8px, 0); /* Kattalashtirish va siljitish */
+  transform: scale(1) translate(8px, 0); /* Kattalashtirish va siljitish */
   box-shadow: 0px 10px 10px rgba(255, 0, 0, 0.5) inset,
     /* Pastki shadow */ 0px -10px 10px rgba(255, 0, 0, 0.5) inset; /* Yuqori shadow */
   z-index: 2; /* Yuqoriroq joylashtirish */

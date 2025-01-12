@@ -19,6 +19,10 @@
   text-align: left;
 }
 
+.title {
+  font-size: 314px;
+}
+
 .cardContent {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
