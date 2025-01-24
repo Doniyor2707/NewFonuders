@@ -1,4 +1,5 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+// img
 import Teacher1 from "../../../../public/assets/Teacher1.png";
 import Teacher2 from "../../../../public/assets/Teacher2.png";
 import Teacher3 from "../../../../public/assets/Teacher3.png";
@@ -7,9 +8,6 @@ import Teacher6 from "../../../../public/assets/Teacher6.png";
 import Teacher7 from "../../../../public/assets/Teacher7.png";
 import Teacher8 from "../../../../public/assets/Teacher8.png";
 import TeachersCard from "./TeachersCard";
-
-// styles
-import styles from "./Teachers.module.css";
 
 const teachersData = [
   {
@@ -58,23 +56,23 @@ const teachersData = [
 
 function Teachers() {
   return (
-    <div className={styles.teacher}>
+    <div className="">
       <Splide
-        aria-label="Teachers Slider"
         options={{
+          updateOnMove: true,
+          type: "loop",
           perPage: 3,
+          perMove: 1,
           focus: "center",
-          breakpoints: {
-            768: { perPage: 2 },
-            480: { perPage: 3 },
-          },
+
         }}
       >
-        {teachersData.map((item, index) => (
-          <SplideSlide key={index}>
-            <TeachersCard item={item} />
-          </SplideSlide>
-        ))}
+        {teachersData &&
+          teachersData.map((item, index) => (
+            <SplideSlide key={index}>
+              <TeachersCard {...item} />
+            </SplideSlide>
+          ))}
       </Splide>
     </div>
   );

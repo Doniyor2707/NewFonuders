@@ -1,27 +1,24 @@
 // styles
 import { memo } from "react";
-import styles from "./Teachers.module.css";
 
-function TeachersCard({ item }) {
+// styles
+import styles from "./Teacher.module.css";
+
+function TeachersCard({ img, teacher, Experience, position }) {
   return (
-    <div className={styles.card}>
-      <div className={styles.imgContent}>
-        <img src={item.img} alt="Image 1" className={styles.img} />
+    <div className={`${styles.teacherCard} p-2`}>
+      <div className="md:max-w-36 md:h-36 max-w-16 h-16 mx-auto overflow-hidden rounded-full red radius border-solid">
+        <img src={img} alt={teacher} className="w-full h-full object-cover" />
       </div>
-      <h1 className={styles.titleTeacher}>{item.teacher}</h1>
-      <div className={styles.info}>
-        <p>
-          Experience: <b>{item.Experience}</b>{" "}
+      <div className="flex flex-col md:gap-2 gap-1 items-start montserrat_font_400">
+        <h1 className="pt-2 max-w-64 text-sm font-bold md:text-4xl">
+          {teacher}
+        </h1>
+        <p className="md:text-xl text-[8px]">
+          Experience: <b>{Experience}</b>
         </p>
-        {item.IELTS ? (
-          <p>
-            IELTS: <b>{item.IELTS}</b>
-          </p>
-        ) : (
-          ""
-        )}
-        <p className={styles.position}>
-          Position: <b>{item.position}</b>
+        <p className="max-w-60 text-[8px] md:text-xl">
+          Position: <b>{position}</b>
         </p>
       </div>
     </div>

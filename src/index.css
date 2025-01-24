@@ -93,6 +93,12 @@
   color: rgba(236, 0, 0, 1);
 }
 
+.radius {
+  border: 1px solid;
+}
+
+
+
 .bg_red_100 {
   background-color: rgba(255, 178, 178, 1);
 }
@@ -155,11 +161,17 @@
 }
 
 .splide__pagination {
-  bottom: -30px !important;
+  display: none !important;
 }
 
-.splide__pagination__page.is-active {
-  background-color: rgba(255, 178, 178, 1) !important;
+.splide__slide {
+  transform: scale(0.8); 
+  transition: transform 0.3s ease;
+}
+
+.splide__slide.is-active {
+  transform: scale(1); 
+  z-index: 10; 
 }
 
 .splide__arrow:disabled {
@@ -198,19 +210,6 @@
   border-radius: 50% !important;
 }
 
-.splide__slide.is-active ._card_t22gx_18 {
-  max-width: 340px;
-  transform: scale(1) translate(8px, 0); /* Kattalashtirish va siljitish */
-  box-shadow: 0px 10px 10px rgba(255, 0, 0, 0.5) inset,
-    /* Pastki shadow */ 0px -10px 10px rgba(255, 0, 0, 0.5) inset; /* Yuqori shadow */
-  z-index: 2; /* Yuqoriroq joylashtirish */
-  overflow: hidden; /* Kartadan tashqaridagi elementlarni yashirish */
-  border-radius: 10px; /* Chekkalarni yumaloqlash */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 999;
-}
-
-
 @media (max-width: 768px) {
   .splide {
     padding: 0 !important;
@@ -237,14 +236,5 @@
   .splide__arrow svg {
     width: 8px !important;
     height: 12px !important;
-  }
-
-  .splide__slide.is-active ._card_t22gx_18 {
-    max-width: 100%;
-    transform: translate(2px);
-    box-shadow: 0px 5px 5px rgba(255, 0, 0, 0.5) inset,
-      /* pastki shadow */ 0px -5px 5px rgba(255, 0, 0, 0.5) inset; /* yuqori shadow */
-    z-index: 2; /* Yuqoriroq joylashtirish */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 }
