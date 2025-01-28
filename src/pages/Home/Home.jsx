@@ -27,7 +27,7 @@ function Home() {
 
         <Teachers />
 
-        <Titile title={"Kurslarimiz"} />
+        <Titile title={"Kurslarimiz"}/>
 
         <Course />
 

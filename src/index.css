@@ -94,7 +94,7 @@
 }
 
 .radius {
-  border: 1px solid;
+  border: 1px solid rgba(236, 0, 0, 1);
 }
 
 .bg_red_100 {
@@ -146,8 +146,10 @@
 }
 
 .box_shadow_2 {
-  box-shadow: 0px -20px 10px 0px rgba(255, 0, 0, 0.25) inset;
+  box-shadow: 0px -10px 10px 0px rgba(255, 0, 0, 0.25) inset;
 }
+
+
 
 :root {
   --primary-color: rgba(34, 34, 34, 1);

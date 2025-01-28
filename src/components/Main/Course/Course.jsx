@@ -6,7 +6,7 @@ import Kids from "../../../../public/assets/kids.png";
 import General from "../../../../public/assets/General.png";
 import IELTS1 from "../../../../public/assets/IELTS1.png";
 
-const courseFromData = [  
+const courseFromData = [
   {
     title: "Kids English",
     img: Kids,
@@ -56,12 +56,9 @@ const courseFromData = [
 
 function Course() {
   return (
-    <div className={styles["course-container"]}>
-      <div className={styles.cardContent}>
-        {courseFromData.map((item) => (
-          <CourseCard {...item} key={item.title} />
-        ))}
-      </div>
+    <div className="mb-10 flex md:flex-row flex-col gap-6">
+      {courseFromData &&
+        courseFromData.map((item) => <CourseCard key={item.title} {...item} />)}
     </div>
   );
 }
