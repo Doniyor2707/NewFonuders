@@ -24,7 +24,7 @@ function CourseCard({
         <h2 className="montserrat_font_700 text-4xl">{title}</h2>
       </div>
 
-      <div className="flex flex-col gap-4 md:gap-3 text-xs md:text-xl">
+      <div className="flex flex-col gap-4 md:gap-3 text-[16px] md:text-xl">
         <div className="flex items-start gap-3">
           <img src={True} alt="" className="w-7 md:w-12" />
           <p className="montserrat_font_400">

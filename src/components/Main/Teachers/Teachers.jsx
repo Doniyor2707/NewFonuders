@@ -61,7 +61,7 @@ function Teachers() {
         options={{
           type: "loop",
           perPage: 3,
-          perMove: 1,
+          perMove: 2,
           focus: "center",
           height: "30rem",
           gap: "0.8rem",

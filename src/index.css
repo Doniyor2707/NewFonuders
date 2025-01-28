@@ -165,12 +165,13 @@
 }
 
 .splide__slide {
-  transform: scale(0.8);
+  transform: scaleY(0.95);
   transition: transform 0.3s ease;
 }
 
 .splide__slide.is-active {
-  transform: scale(1);
+  transform: scaleY(1);
+  z-index: 10;
 }
 
 
@@ -185,7 +186,11 @@
   fill: #fff !important;
 }
 
-
+.splide__list {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
 
 .splide__arrow--next {
   padding: 5px !important;
