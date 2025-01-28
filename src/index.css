@@ -97,8 +97,6 @@
   border: 1px solid;
 }
 
-
-
 .bg_red_100 {
   background-color: rgba(255, 178, 178, 1);
 }
@@ -165,13 +163,13 @@
 }
 
 .splide__slide {
-  transform: scale(0.8); 
+  transform: scale(0.8);
   transition: transform 0.3s ease;
 }
 
 .splide__slide.is-active {
-  transform: scale(1); 
-  z-index: 10; 
+  transform: scale(1);
+  z-index: 10;
 }
 
 .splide__arrow:disabled {

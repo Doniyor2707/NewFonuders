@@ -59,12 +59,17 @@ function Teachers() {
     <div className="">
       <Splide
         options={{
-          updateOnMove: true,
           type: "loop",
           perPage: 3,
           perMove: 1,
           focus: "center",
-
+          height: "30rem",
+          breakpoints: {
+            768: {
+              height: "15rem",
+              type: "slide",
+            },
+          },
         }}
       >
         {teachersData &&
