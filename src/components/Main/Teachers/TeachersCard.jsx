@@ -7,7 +7,7 @@ import styles from "./Teacher.module.css";
 function TeachersCard({ img, teacher, Experience, position }) {
   return (
     <div className={`${styles.teacherCard} p-2`}>
-      <div className="md:max-w-36 md:h-36 max-w-16 h-16 mx-auto overflow-hidden rounded-full red radius border-solid">
+      <div className="md:max-w-36 md:h-36 max-w-16 h-16 mx-auto overflow-hidden box_shadow_3 rounded-full red radius border-solid">
         <img src={img} alt={teacher} className="w-full h-full object-cover" />
       </div>
       <div className="flex flex-col md:gap-2 gap-1 items-start montserrat_font_400">
