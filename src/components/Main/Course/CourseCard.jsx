@@ -18,13 +18,13 @@ function CourseCard({
   cabinet,
 }) {
   return (
-    <div className="card flex flex-col gap-6 radius border-3 w-full md:rounded-xl rounded-[28px] px-5 py-4 md:px-6 md:py-10 shadows ">
+    <div className="card flex flex-col gap-7 radius border-3 w-full md:rounded-xl rounded-[28px] px-5 py-4 md:px-6 md:py-10 shadows ">
       <div className="flex gap-4 items-center"> 
         <img src={img} alt="Image" className="rounded-full md:w-24 w-[87px]  radius" />
         <h2 className="montserrat_font_700 text-4xl">{title}</h2>
       </div>
 
-      <div className="flex flex-col gap-3 text-xs md:text-xl">
+      <div className="flex flex-col gap-4 md:gap-3 text-xs md:text-xl">
         <div className="flex items-start gap-3">
           <img src={True} alt="" className="w-7 md:w-12" />
           <p className="montserrat_font_400">

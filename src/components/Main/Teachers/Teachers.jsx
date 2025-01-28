@@ -56,7 +56,7 @@ const teachersData = [
 
 function Teachers() {
   return (
-    <div className="">
+    <div>
       <Splide
         options={{
           type: "loop",
@@ -64,10 +64,11 @@ function Teachers() {
           perMove: 1,
           focus: "center",
           height: "30rem",
+          gap: "0.8rem",
           breakpoints: {
             768: {
               height: "15rem",
-              type: "slide",
+              type: "loop",
             },
           },
         }}
