@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainLayout from "./layout/MainLayout";
+import { AuthLayout, MainLayout } from "./layout";
 // Default theme
 import "@splidejs/react-splide/css";
 
@@ -10,6 +10,7 @@ import "@splidejs/react-splide/css/sea-green";
 // or only core styles
 import "@splidejs/react-splide/css/core";
 import Home from "./pages/Home/Home";
+import RegistrationForm from "./pages/Auth/RegistrationForm";
 
 function App() {
   const routes = createBrowserRouter([
@@ -20,6 +21,16 @@ function App() {
         {
           index: true,
           element: <Home />,
+        },
+      ],
+    },
+    {
+      path: "/login",
+      element: <AuthLayout />,
+      children: [
+        {
+          index: true,
+          element: <RegistrationForm />,
         },
       ],
     },

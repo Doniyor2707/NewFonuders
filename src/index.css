@@ -204,7 +204,7 @@
 
 .splide__arrow--prev {
   padding: 5px !important;
-  left: 3rem !important;
+  left: -1rem !important;
   border-radius: 50% !important;
 }
 

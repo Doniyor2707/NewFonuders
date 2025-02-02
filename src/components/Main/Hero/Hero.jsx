@@ -1,11 +1,18 @@
 // img
+import { useNavigate } from "react-router-dom";
 import Image from "../../../../public/assets/Foto.png";
 // styles
 import styles from "./Hero.module.css";
 
 function Hero() {
+  const navigate = useNavigate();
+
+  const hendleNavigate = () => {
+    navigate("/login");
+  };
+
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-7 items-center justify-between md:mb-40 md:mt-10">
+    <div className="flex flex-col-reverse md:flex-row gap-7 items-center justify-between md:mb-32 md:mt-10">
       {/* hero text content */}
       <div className="flex flex-col gap-7 text-center md:text-left mb-9">
         <h1 className="color_red text-4xl md:text-7xl font-bold max-w-xl">
@@ -19,6 +26,7 @@ function Hero() {
         <button
           className="btn button max-w-full md:max-w-52 py-2 px-4"
           style={{ background: "rgba(236, 0, 0, 1)", color: "white" }}
+          onClick={hendleNavigate}
         >
           Birinchi darsga yozilish
         </button>

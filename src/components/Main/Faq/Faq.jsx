@@ -6,7 +6,7 @@ function Faq() {
     <div className="align-elements">
       <Titile title={"FAQ"} />
 
-      <p className="montserrat_font_500 md:text-3xl text-sm text-center md:mb-9 mb-6">
+      <p className="montserrat_font_500 md:text-3xl text-[16px] text-center md:mb-9 mb-4">
         Ko‘p beriladigan savollarga javob beramiz!
       </p>
 

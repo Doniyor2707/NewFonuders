@@ -1,6 +1,7 @@
 import { memo } from "react";
 
 import True from "../../../../public/assets/image.png";
+import { useNavigate } from "react-router-dom";
 
 
 function CourseCard({
@@ -17,10 +18,23 @@ function CourseCard({
   cabinetBold,
   cabinet,
 }) {
+
+  const navigate = useNavigate()
+
+
+  const handleNavigate = ()=> {
+    navigate("/login")
+  }
+
+
   return (
     <div className="card flex flex-col gap-7 radius border-3 w-full md:rounded-xl rounded-[28px] px-5 py-4 md:px-6 md:py-10 shadows ">
-      <div className="flex gap-4 items-center"> 
-        <img src={img} alt="Image" className="rounded-full md:w-24 w-[87px]  radius" />
+      <div className="flex gap-4 items-center">
+        <img
+          src={img}
+          alt="Image"
+          className="rounded-full md:w-24 w-[87px]  radius"
+        />
         <h2 className="montserrat_font_700 text-4xl">{title}</h2>
       </div>
 
@@ -34,7 +48,7 @@ function CourseCard({
         </div>
 
         <div className="flex items-start gap-3">
-          <img src={True} alt="" className="w-7 md:w-12"/>
+          <img src={True} alt="" className="w-7 md:w-12" />
           <p className="montserrat_font_400">
             <b>{teacherBold}</b>
             {teacher}
@@ -42,7 +56,7 @@ function CourseCard({
         </div>
 
         <div className="flex items-start gap-3">
-          <img src={True} alt="" className="w-7 md:w-12"/>
+          <img src={True} alt="" className="w-7 md:w-12" />
           <p className="montserrat_font_400">
             <b>{spanTitleBold}</b>
             {spanTitle}
@@ -50,7 +64,7 @@ function CourseCard({
         </div>
 
         <div className="flex items-start gap-3">
-          <img src={True} alt="" className="w-7 md:w-12"/>
+          <img src={True} alt="" className="w-7 md:w-12" />
           <p className="montserrat_font_400">
             <b>{spanParagrfBold}</b>
             {spanParagrf}
@@ -58,7 +72,7 @@ function CourseCard({
         </div>
 
         <div className="flex items-start gap-3">
-          <img src={True} alt="" className="w-7 md:w-12"/>
+          <img src={True} alt="" className="w-7 md:w-12" />
           <p className="montserrat_font_400">
             <b>{cabinetBold}</b>
             {cabinet}
@@ -66,7 +80,11 @@ function CourseCard({
         </div>
       </div>
 
-      <button className="btn red text-white max-w-96 montserrat_font_500 text-[16px] md:text-xl">Birinchi darsga yozilish</button>
+
+        <button className="btn red text-white max-w-96 montserrat_font_500 text-[16px] md:text-xl" onClick={handleNavigate}>
+          Birinchi darsga yozilish
+        </button>
+
     </div>
   );
 }

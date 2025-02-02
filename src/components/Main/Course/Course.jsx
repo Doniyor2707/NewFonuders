@@ -1,5 +1,4 @@
 import CourseCard from "./CourseCard";
-import styles from "./Course.module.css";
 
 // img
 import Kids from "../../../../public/assets/kids.png";
