@@ -19,6 +19,18 @@
   transition: all 0.2s ease;
 }
 
+.error {
+  border-color: #d32f2f !important;
+  background-color: #ffebee;
+}
+
+.errorMessage {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
 .input:focus {
   outline: none;
   border-color: #dc2626;

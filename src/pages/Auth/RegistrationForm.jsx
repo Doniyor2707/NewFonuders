@@ -1,69 +1,115 @@
-import React, { useState } from "react";
-
-import styles from "./RegistrationForm.module.css";
-
-import FormInput from "../../components/ui/input/FormInput";
-
-
+import React from "react";
+import { useFormik } from "formik";
 import * as Yup from "yup";
+import styles from "./RegistrationForm.module.css";
+import FormInput from "../../components/ui/input/FormInput";
 import Button from "../../components/ui/button_1/Button";
 
 const initialValues = {
   name: "",
-  phone: "",
+  phone: "+998", // Default qiymat
   source: "",
-  englishLevel: "",
+  problem: "",
 };
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-    .required("Ism majburiy")
+    .required("Ism majburiy !")
     .min(3, "Ism kamida 3 ta harf bo'lishi kerak")
     .max(50, "Ism 50 ta harfdan oshmasligi kerak"),
   phone: Yup.string()
-    .required("Telefon raqami majburiy")
-    .matches(/^\+?[0-9]{10,15}$/, "Telefon raqami noto'g'ri formatda"),
-  source: Yup.string()
-    .required("Manba majburiy")
-    .oneOf(["instagram", "friend", "website"], "Noto'g'ri manba"),
-  englishLevel: Yup.string()
-    .required("Ingliz tili darajasi majburiy")
-    .oneOf(
-      ["beginner", "intermediate", "advanced"],
-      "Noto'g'ri ingliz tili darajasi"
+    .required("Telefon raqami majburiy !")
+    .matches(
+      /^\+998(33|55|77|88|90|91|93|94|95|97|98|99)[0-9]{7}$/,
+      "Sizda xatolik mavjud"
     ),
+  source: Yup.string()
+    .required("Manba majburiy (instagram,friend,website) !")
+    .oneOf(["instagram", "friend", "website"], "Noto'g'ri manba"),
+  problem: Yup.string().required("Muammo majburiy !"),
 });
 
 const RegistrationForm = () => {
-  const [level, setLevel] = useState("Kids" | "General");
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: (values) => {
+      console.log("Form ma'lumotlari:", values);
+    },
+  });
+
+  const handlePhoneChange = (e) => {
+    let inputValue = e.target.value;
+
+    // Agar foydalanuvchi "+998" ni o‘chirmoqchi bo‘lsa, bunga ruxsat bermaymiz
+    if (!inputValue.startsWith("+998")) {
+      return;
+    }
+
+    // Faqat raqamlarni ruxsat berish (faqat 0-9 orasidagi sonlar va "+998" bo‘lishi kerak)
+    inputValue = inputValue.replace(/[^\d+]/g, "");
+
+    // Maksimal uzunlik 13 belgidan oshmasligi kerak
+    if (inputValue.length > 13) {
+      return;
+    }
+
+    formik.setFieldValue("phone", inputValue);
+  };
 
   return (
-    <div className={styles.globalForm}>
-      <form className={styles.form}>
-        <h1 className={styles.title}>Birinchi darsga yoziling!</h1>
-        <FormInput label="Ism:" placeholder="Komilova Komila" />
-        <FormInput label="Telefon raqam:" placeholder="+998 xx xxx xx xx" />
+    <div className="p-2">
+      <form className={styles.form} onSubmit={formik.handleSubmit} noValidate>
+        <h1 className="text-4xl text-center">Birinchi darsga yoziling!</h1>
         <FormInput
-          label="Bizni haqimizda qayerdan eshitdingiz:"
-          placeholder="telegram, instagram, youtube va ..."
+          name="name"
+          label="Ism:"
+          placeholder="Komilova Komila"
+          value={formik.values.name}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.errors.name}
+          touched={formik.touched.name}
         />
+
         <FormInput
+          name="phone"
+          label="Telefon raqam:"
+          placeholder="+998 xx xxx xx xx"
+          value={formik.values.phone}
+          onChange={handlePhoneChange} // Yangilangan funksiyani qo‘shdik
+          onBlur={formik.handleBlur}
+          error={formik.errors.phone}
+          touched={formik.touched.phone}
+        />
+
+        <FormInput
+          name="source"
+          label="Bizni qayerdan eshitdingiz:"
+          placeholder="telegram, instagram, website va ..."
+          value={formik.values.source}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.errors.source}
+          touched={formik.touched.source}
+        />
+
+        <FormInput
+          name="problem"
           label="Ingliz tili bo'yicha muammoyingiz:"
           placeholder="Ingliz tilida gapira olmayman..."
+          value={formik.values.problem}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.errors.problem}
+          touched={formik.touched.problem}
         />
+
         <div className={styles.levelContainer}>
           <p className={styles.levelLabel}>Darajangizni tanlang:</p>
           <div className={styles.buttonGrid}>
-            <Button
-              variant={level === "Kids" ? "primary" : "secondary"}
-              onClick={() => setLevel("Kids")}
-              title={"Kids"}
-            ></Button>
-            <Button
-              variant={level === "General" ? "primary" : "secondary"}
-              onClick={() => setLevel("General")}
-              title={"General"}
-            ></Button>
+            <Button type="submit" title="Kids" />
+            <Button type="submit" title="General" />
           </div>
         </div>
       </form>
