@@ -9,8 +9,7 @@ import "@splidejs/react-splide/css/sea-green";
 
 // or only core styles
 import "@splidejs/react-splide/css/core";
-import Home from "./pages/Home/Home";
-import RegistrationForm from "./pages/Auth/RegistrationForm";
+import { Home, Auth, GeneralTest, KidsTest } from "./pages";
 
 function App() {
   const routes = createBrowserRouter([
@@ -30,7 +29,15 @@ function App() {
       children: [
         {
           index: true,
-          element: <RegistrationForm />,
+          element: <Auth />,
+        },
+        {
+          path: "kids",
+          element: <KidsTest />,
+        },
+        {
+          path: "general",
+          element: <GeneralTest />,
         },
       ],
     },

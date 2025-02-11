@@ -4,12 +4,14 @@ import * as Yup from "yup";
 import styles from "./RegistrationForm.module.css";
 import FormInput from "../../components/ui/input/FormInput";
 import Button from "../../components/ui/button_1/Button";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   name: "",
   phone: "+998", // Default qiymat
   source: "",
   problem: "",
+  level: "", // Daraja (Kids yoki General)
 };
 
 const validationSchema = Yup.object().shape({
@@ -25,16 +27,22 @@ const validationSchema = Yup.object().shape({
     ),
   source: Yup.string()
     .required("Manba majburiy (instagram,friend,website) !")
-    .oneOf(["instagram", "friend", "website"], "Noto'g'ri manba"),
+    .oneOf(["instagram","friend","website,Telegram"], "Noto'g'ri manba"),
   problem: Yup.string().required("Muammo majburiy !"),
 });
 
 const RegistrationForm = () => {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      console.log("Form ma'lumotlari:", values);
+      if (values.level) {
+        navigate(`/login/${values.level}`);
+      } else {
+        alert("Iltimos, darajani tanlang!");
+      }
     },
   });
 
@@ -108,8 +116,16 @@ const RegistrationForm = () => {
         <div className={styles.levelContainer}>
           <p className={styles.levelLabel}>Darajangizni tanlang:</p>
           <div className={styles.buttonGrid}>
-            <Button type="submit" title="Kids" />
-            <Button type="submit" title="General" />
+            <Button
+              type="submit"
+              title="Kids"
+              onClick={() => formik.setFieldValue("level", "kids")}
+            />
+            <Button
+              type="submit"
+              title="General"
+              onClick={() => formik.setFieldValue("level", "general")}
+            />
           </div>
         </div>
       </form>
