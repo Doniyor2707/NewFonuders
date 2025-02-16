@@ -1,10 +1,17 @@
 import React from "react";
+
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+
 import * as Yup from "yup";
-import styles from "./RegistrationForm.module.css";
+
+// com
 import FormInput from "../../components/ui/input/FormInput";
 import Button from "../../components/ui/button_1/Button";
-import { useNavigate } from "react-router-dom";
+
+// styles
+import styles from "./RegistrationForm.module.css";
+
 
 const initialValues = {
   name: "",
