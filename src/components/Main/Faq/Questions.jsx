@@ -8,7 +8,7 @@ function Questions() {
           Ingliz tilini noldan qancha muddatda o‘rganish mumkin?
         </div>
         <div className="collapse-content">
-          <p className="text-xl text-customGray">
+          <p className="md:text-xl text-xs text-customGray">
             Bu o‘quvchining darajasi va mashg‘ulotga ajratadigan vaqti,
             shuningdek, individual qobiliyatiga bog‘liq bo‘ladi. Odatda,
             kundalik shug‘ullanish bilan 6-12 oy ichida sezilarli natijalarga
@@ -22,7 +22,7 @@ function Questions() {
           Darslar qanday formatda o‘tiladi?
         </div>
         <div className="collapse-content">
-          <p className="text-xl text-customGray">
+          <p className="md:text-xl text-xs text-customGray">
             Kurslar oflayn va onlayn formatda bo‘lishi mumkin. Darslarda
             gapirish, yozish, tinglab tushunish va grammatikani o‘rganish
             bo‘yicha mashg‘ulotlar olib boriladi.
@@ -35,7 +35,7 @@ function Questions() {
           O'quv markazda kimlar dars beradi?
         </div>
         <div className="collapse-content">
-          <p className="text-xl text-customGray">
+          <p className="md:text-xl text-xs text-customGray">
             O‘qituvchilar tajribali va maxsus sertifikatga ega mutaxassislardir.
             Ularning IELTS sertifikatidan tashqari xalqaro TESOL/TEFL
             sertifikatlari ham mavjud.
@@ -48,7 +48,7 @@ function Questions() {
           Darslarga qanday yozilish mumkin?
         </div>
         <div className="collapse-content">
-          <p className="text-xl text-customGray">
+          <p className="md:text-xl text-xs text-customGray">
             Markazga kelib ro‘yxatdan o‘tish yoki onlayn tarzda anketa
             to‘ldirish orqali kursga yozilish mumkin.
           </p>
@@ -60,7 +60,7 @@ function Questions() {
           Darslar nechta kishilik guruhlarda o‘tiladi?
         </div>
         <div className="collapse-content">
-          <p className="text-xl text-customGray">
+          <p className="md:text-xl text-xs text-customGray">
             Odatda, guruhda 6-12 kishi bo‘ladi. Bundan tashqari, individual
             darslar ham mavjud.
           </p>
@@ -72,7 +72,7 @@ function Questions() {
           Boshlang‘ich darajadan boshlab o‘qiy olamanmi?
         </div>
         <div className="collapse-content">
-          <p className="text-xl text-customGray">
+          <p className="md:text-xl text-xs text-customGray">
             Ha, kurslar barcha darajalar uchun moslashtirilgan va boshlang‘ich
             darajadan o‘qishni boshlashingiz mumkin.
           </p>
@@ -84,7 +84,7 @@ function Questions() {
           Necha yoshdan kurslarga yozilsa bo'ladi?
         </div>
         <div className="collapse-content">
-          <p className="text-xl text-customGray">
+          <p className="md:text-xl text-xs text-customGray">
             Kurslarimizga 7 yoshdan boshlab yozilsa bo'ladi va bizda yosh
             kategoriyasi chegaralanmagan.
           </p>
