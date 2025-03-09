@@ -80,7 +80,14 @@ const shortAnswers = [
   { question: "Did you do your homework?", correct: "Yes, I did." },
 ];
 
-const wordsTask = ["Whisper", "Suspicious", "Slowly", "Never", "Amazing", "Apron"];
+const wordsTask = [
+  "Whisper",
+  "Suspicious",
+  "Slowly",
+  "Never",
+  "Amazing",
+  "Apron",
+];
 
 const putWordsQuestions = [
   "He is running _____________ .",
@@ -124,7 +131,7 @@ export default function KidsEnglishTask() {
 
   const handleAnswerChange = (index, value) => {
     const newAnswers = [...answers];
-    newAnswers[index] = value;
+    newAnswers[index] = value || "";
     setAnswers(newAnswers);
   };
 
