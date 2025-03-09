@@ -28,15 +28,33 @@ I would like to go to Egypt, Japan and China. I’m going to learn Japanese next
 `;
 
 const questions = [
-  "How old is Molly?",
-  "What are Molly's hobbies?",
-  "How many pets does Molly have?",
-  "What is Molly's mother's job?",
-  "Why didn't Molly's father arrive from America?",
-  "What can Molly's brother do?",
-  "What is Molly's sister doing now?",
-  "Which countries does Molly want to visit?",
-  "What is Molly's plan for next year?"
+  "What’s her name?",
+  "How old is she?",
+  "What is her sister doing at the moment?",
+  "What does her father do?",
+  "What’s her future plan?",
+  "What’s her mother’s job?",
+  "What did her father do yesterday?",
+  "Does she have any pets?",
+  "Which countries does she want to visit?",
+  "How tall is her mother?",
+  "What can her brother do?",
+  "Which countries has Molly been to?",
+];
+
+const correctAnswers = [
+  "Molly",
+  "Fourteen",
+  "Playing",
+  "Pilot",
+  "Learn Japanese",
+  "Model",
+  "Went to Turkey",
+  "Yes, she has a dog and a cat",
+  "Egypt, Japan, and China",
+  "180 cm",
+  "Draw well",
+  "She has never been abroad",
 ];
 
 const sentences = [
@@ -50,7 +68,7 @@ const sentences = [
   "will/in/car/the/I/not/put/it",
   "used to/my brother/play/the guitar",
   "he/bought/a/just/flower/has",
-  "will/built/next/year/be/the/house"
+  "will/built/next/year/be/the/house",
 ];
 
 const shortAnswers = [
@@ -59,11 +77,16 @@ const shortAnswers = [
   { question: "Is there a book on the table?", correct: "Yes, there is." },
   { question: "Was it sunny?", correct: "Yes, it was." },
   { question: "Has he brushed her hair?", correct: "Yes, he has." },
-  { question: "Did you do your homework?", correct: "Yes, I did." }
+  { question: "Did you do your homework?", correct: "Yes, I did." },
 ];
 
 const wordsTask = [
-  "Whisper", "Suspicious", "Slowly", "Never", "Amazing", "Apron"
+  "Whisper",
+  "Suspicious",
+  "Slowly",
+  "Never",
+  "Amazing",
+  "Apron",
 ];
 
 const putWordsQuestions = [
@@ -72,7 +95,7 @@ const putWordsQuestions = [
   "He used to __________ while his little brother was sleeping.",
   "A maid was wearing a white _______________ .",
   "He _______ drinks coffee. He hates it.",
-  "That man is very __________. I haven’t seen him before."
+  "That man is very __________. I haven’t seen him before.",
 ];
 
 const putWordsAnswers = [
@@ -81,7 +104,7 @@ const putWordsAnswers = [
   "whisper",
   "apron",
   "never",
-  "suspicious"
+  "suspicious",
 ];
 
 export default function KidsEnglishTask() {
@@ -113,24 +136,44 @@ export default function KidsEnglishTask() {
   };
 
   const checkAnswers = () => {
-    if (answers.every(answer => answer.trim() === "")) {
+    if (answers.every((answer) => answer.trim() === "")) {
       alert("Please enter all answers!");
       return;
     }
 
     let newScore = score;
     answers.forEach((answer, index) => {
-      if (step === 1 && answer.trim().toLowerCase() === images[index].answer) {
+      if (
+        step === 1 &&
+        answer.trim().toLowerCase() === images[index].answer.toLowerCase()
+      ) {
         newScore++;
-      } else if (step === 2 && answer.trim().toLowerCase() === words[index].translation) {
+      } else if (
+        step === 2 &&
+        answer.trim().toLowerCase() === words[index].translation.toLowerCase()
+      ) {
         newScore++;
-      } else if (step === 3 && answer.trim() !== "") {
+      } else if (
+        step === 3 &&
+        answer.trim().toLowerCase() === correctAnswers[index].toLowerCase()
+      ) {
         newScore++;
-      } else if (step === 4 && answer.trim().toLowerCase() === sentences[index].replace(/\//g, " ")) {
+      } else if (
+        step === 4 &&
+        answer.trim().toLowerCase() ===
+          sentences[index].replace(/\//g, " ").toLowerCase()
+      ) {
         newScore++;
-      } else if (step === 5 && answer.trim().toLowerCase() === shortAnswers[index].correct.toLowerCase()) {
+      } else if (
+        step === 5 &&
+        answer.trim().toLowerCase() ===
+          shortAnswers[index].correct.toLowerCase()
+      ) {
         newScore++;
-      } else if (step === 6 && answer.trim().toLowerCase() === putWordsAnswers[index]) {
+      } else if (
+        step === 6 &&
+        answer.trim().toLowerCase() === putWordsAnswers[index].toLowerCase()
+      ) {
         newScore++;
       }
     });
@@ -151,16 +194,19 @@ export default function KidsEnglishTask() {
     3: "Read text, answer the questions",
     4: "Rearrange the sentences",
     5: "Give short answers",
-    6: "Put the words"
+    6: "Put the words. Whisper,Suspicious,Slowly,Never,Amazing,Apron",
   };
 
   return (
     <div className="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg">
       {showFinalScore ? (
         <div className="text-center p-6">
-          <p className="text-2xl font-bold mb-4 text-green-600">Test Completed!</p>
+          <p className="text-2xl font-bold mb-4 text-green-600">
+            Test Completed!
+          </p>
           <p className="text-lg text-gray-700">
-            Your final score is: <span className="font-bold text-3xl text-red-600">{score}</span>
+            Your final score is:{" "}
+            <span className="font-bold text-3xl text-red-600">{score}</span>
           </p>
           <button
             onClick={() => {
@@ -176,12 +222,21 @@ export default function KidsEnglishTask() {
         </div>
       ) : (
         <>
-          <p className="text-2xl font-bold text-center mb-6 text-gray-800">{stepTitles[step]}</p>
+          <p className="text-xl font-bold text-center mb-6 text-gray-800">
+            {stepTitles[step]}
+          </p>
           {step === 1 && (
             <div className="grid grid-cols-2 gap-4">
               {images.map((image, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
-                  <img src={image.src} alt="" className="w-24 h-24 mx-auto mb-3" />
+                <div
+                  key={index}
+                  className="bg-gray-50 p-4 rounded-lg shadow-sm text-center"
+                >
+                  <img
+                    src={image.src}
+                    alt=""
+                    className="w-24 h-24 mx-auto mb-3"
+                  />
                   <input
                     type="text"
                     value={answers[index]}
@@ -196,8 +251,13 @@ export default function KidsEnglishTask() {
           {step === 2 && (
             <div className="space-y-4">
               {words.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                  <p className="font-semibold text-gray-700 mb-2">{item.word}</p>
+                <div
+                  key={index}
+                  className="bg-gray-50 p-4 rounded-lg shadow-sm"
+                >
+                  <p className="font-semibold text-gray-700 mb-2">
+                    {item.word}
+                  </p>
                   <input
                     type="text"
                     value={answers[index]}
@@ -212,17 +272,26 @@ export default function KidsEnglishTask() {
           {step === 3 && (
             <div>
               <div className="bg-gray-100 p-4 rounded-lg mb-6">
-                <p className="text-lg font-semibold mb-2 text-gray-700">Read the text:</p>
+                <p className="text-lg font-semibold mb-2 text-gray-700">
+                  Read the text:
+                </p>
                 <p className="whitespace-pre-line text-gray-600">{text}</p>
               </div>
               <div className="space-y-4">
                 {questions.map((question, index) => (
-                  <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                    <p className="font-semibold text-gray-700 mb-2">{question}</p>
+                  <div
+                    key={index}
+                    className="bg-gray-50 p-4 rounded-lg shadow-sm"
+                  >
+                    <p className="font-semibold text-gray-700 mb-2">
+                      {question}
+                    </p>
                     <input
                       type="text"
                       value={answers[index]}
-                      onChange={(e) => handleAnswerChange(index, e.target.value)}
+                      onChange={(e) =>
+                        handleAnswerChange(index, e.target.value)
+                      }
                       className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                       placeholder="Enter answer"
                     />
@@ -234,8 +303,13 @@ export default function KidsEnglishTask() {
           {step === 4 && (
             <div className="space-y-4">
               {sentences.map((sentence, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                  <p className="font-semibold text-gray-700 mb-2">{sentence.replace(/\//g, " ")}</p>
+                <div
+                  key={index}
+                  className="bg-gray-50 p-4 rounded-lg shadow-sm"
+                >
+                  <p className="font-semibold text-gray-700 mb-2">
+                    {sentence.replace(/\//g, " ")}
+                  </p>
                   <input
                     type="text"
                     value={answers[index]}
@@ -250,8 +324,13 @@ export default function KidsEnglishTask() {
           {step === 5 && (
             <div className="space-y-4">
               {shortAnswers.map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                  <p className="font-semibold text-gray-700 mb-2">{item.question}</p>
+                <div
+                  key={index}
+                  className="bg-gray-50 p-4 rounded-lg shadow-sm"
+                >
+                  <p className="font-semibold text-gray-700 mb-2">
+                    {item.question}
+                  </p>
                   <input
                     type="text"
                     value={answers[index]}
@@ -266,7 +345,10 @@ export default function KidsEnglishTask() {
           {step === 6 && (
             <div className="space-y-4">
               {putWordsQuestions.map((question, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <div
+                  key={index}
+                  className="bg-gray-50 p-4 rounded-lg shadow-sm"
+                >
                   <p className="font-semibold text-gray-700 mb-2">{question}</p>
                   <input
                     type="text"
@@ -285,7 +367,9 @@ export default function KidsEnglishTask() {
           >
             {step < 6 ? "Next" : "Finish"}
           </button>
-          <p className="mt-4 text-lg font-bold text-center text-gray-700">Score: {score}</p>
+          <p className="mt-4 text-lg font-bold text-center text-gray-700">
+            Score: {score}
+          </p>
         </>
       )}
     </div>
