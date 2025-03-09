@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
 const images = [
-  { src: "/assets/apple.png", answer: "apple" },
-  { src: "/assets/cat.png", answer: "cat" },
-  { src: "/assets/dog.png", answer: "dog" },
-  { src: "/assets/ball.png", answer: "ball" },
+  { src: "/assets/swimming.png", answer: "swimming" },
+  { src: "/assets/suitcase.png", answer: "suitcase" },
+  { src: "/assets/newspaper.png", answer: "newspaper" },
+  { src: "/assets/anchor.png", answer: "anchor" },
   { src: "/assets/car.png", answer: "car" },
-  { src: "/assets/tree.png", answer: "tree" },
+  { src: "/assets/elbow.png", answer: "elbow" },
 ];
 
 const words = [
@@ -80,14 +80,7 @@ const shortAnswers = [
   { question: "Did you do your homework?", correct: "Yes, I did." },
 ];
 
-const wordsTask = [
-  "Whisper",
-  "Suspicious",
-  "Slowly",
-  "Never",
-  "Amazing",
-  "Apron",
-];
+const wordsTask = ["Whisper", "Suspicious", "Slowly", "Never", "Amazing", "Apron"];
 
 const putWordsQuestions = [
   "He is running _____________ .",
@@ -194,7 +187,7 @@ export default function KidsEnglishTask() {
     3: "Read text, answer the questions",
     4: "Rearrange the sentences",
     5: "Give short answers",
-    6: "Put the words. Whisper,Suspicious,Slowly,Never,Amazing,Apron",
+    6: "Put the words",
   };
 
   return (
@@ -226,7 +219,7 @@ export default function KidsEnglishTask() {
             {stepTitles[step]}
           </p>
           {step === 1 && (
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {images.map((image, index) => (
                 <div
                   key={index}
@@ -359,6 +352,21 @@ export default function KidsEnglishTask() {
                   />
                 </div>
               ))}
+              <div className="mt-6">
+                <h3 className="text-lg font-bold mb-4 text-gray-700">
+                  Available Words:
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {wordsTask.map((word, index) => (
+                    <span
+                      key={index}
+                      className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm"
+                    >
+                      {word}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
           <button
