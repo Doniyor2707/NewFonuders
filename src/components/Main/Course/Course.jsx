@@ -15,7 +15,7 @@ const courseFromData = [
     teacher: `(asosiy o‘qituvchidan tashqari Support teacher mavjud)`,
     spanTitleBold: "Free Sunday Events",
     spanTitle: `(har hafta o‘tqaziladigan tadbirlar)`,
-    spanParagrfBold: "Diery",
+    spanParagrfBold: "Diary",
     spanParagrf: `(uyga vazifalarni ko‘rib borish va imtihon natijalarini ko‘rib borish uchun)`,
     cabinetBold: "Shaxsiy kabinet",
     cabinet: `(ota-onalar nazorati uchun shaxsiy kabinet)`,
