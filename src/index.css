@@ -25,6 +25,14 @@
   }
 
   @font-face {
+    font-family: "Andasia Personal Use";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../public/fonts/Andasia.woff2) format("woff2");
+  }
+
+  @font-face {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
@@ -106,6 +114,12 @@
   font-weight: 400;
 }
 
+.andasia {
+  font-family: "Andasia Personal Use";
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
 .aquire_font_600 {
   font-family: "Aquire";
   font-weight: 600;
@@ -114,7 +128,6 @@
 .aquire_font_700 {
   font-family: "Aquire";
   font-weight: 700;
-  
 }
 
 .montserrat_font_400 {
@@ -209,6 +222,11 @@
   border-radius: 50% !important;
 }
 
+.radius_footer {
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
 @media (max-width: 768px) {
   .splide {
     overflow: hidden;
@@ -231,5 +249,10 @@
   .splide__slide.is-active {
     transform: scaleY(1);
     z-index: 10;
+  }
+
+  .radius_footer {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
   }
 }
