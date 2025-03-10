@@ -7,33 +7,51 @@ import Logo from "/public/assets/logo.png";
 
 function Footer() {
   return (
-    <div className="red radius_footer">
-      <footer className="align-elements  text-primary-content p-10">
-        <h2 className="andasia md:text-7xl text-3xl md:py-12 pb-5 text-center">
+    <div className="red radius_footer bg-red-600 p-5 md:p-10 rounded-t-3xl">
+      <footer className="align-elements text-white text-center md:text-left">
+        <h2 className="andasia text-center text-3xl md:text-5xl lg:text-7xl md:py-10 md:pb-14 py-5">
           We grow together!
         </h2>
-        <MapComponent />
-        <div className="flex align-middle justify-between pt-5 white_color montserrat_font_400 text-xs md:text-3xl">
-          <div>
-            <img src={Logo} alt="Logo" />
+
+        {/* Xarita */}
+        <div className="w-full h-[250px] md:h-[300px] rounded-lg overflow-hidden">
+          <MapComponent />
+        </div>
+
+        {/* Bo'limlar */}
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-6 mt-8 text-sm md:text-xl">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <img src={Logo} alt="Logo" className="w-24 md:w-32" />
           </div>
-          <div className="flex flex-col gap-6">
-            <h1>
-              Biz bilan <br /> bog‘lanish:
-            </h1>
-            <p>+998 71 205-53-33</p>
+
+          {/* Bog‘lanish */}
+          <div className="text-center md:text-left">
+            <h1 className="font-bold">Biz bilan bog‘lanish:</h1>
+            <p className="mt-2">+998 71 205-53-33</p>
           </div>
-          <div className="flex items-start flex-col gap-6">
-            <h1>Ijtimoiy tarmoqlarimiz:</h1>
-            <div className="flex gap-3">
-              <a href="https://t.me/founders_school_uz?fbclid=PAZXh0bgNhZW0CMTEAAaaZV0we6-ItQh9kqiJyJ64MSUm-PCRAD9GGOxbuWD0lp4O1nS-QbKZC8dU_aem_IMuCs-867C28G5FgMHBPMA">
-                <FaTelegram className="w-10 h-10" />
+
+          {/* Ijtimoiy tarmoqlar */}
+          <div className="text-center md:text-left">
+            <h1 className="font-bold">Ijtimoiy tarmoqlarimiz:</h1>
+            <div className="flex justify-center md:justify-start gap-4 mt-3">
+              <a
+                href="https://t.me/founders_school_uz"
+                className="text-white hover:text-gray-300"
+              >
+                <FaTelegram className="w-6 h-6 md:w-10 md:h-10" />
               </a>
-              <a href="https://www.instagram.com/founders_school/">
-                <FaInstagram className="w-10 h-10" />
+              <a
+                href="https://www.instagram.com/founders_school/"
+                className="text-white hover:text-gray-300"
+              >
+                <FaInstagram className="w-6 h-6 md:w-10 md:h-10" />
               </a>
-              <a href="https://www.youtube.com/@founders_school">
-                <FaYoutube className="w-10 h-10" />
+              <a
+                href="https://www.youtube.com/@founders_school"
+                className="text-white hover:text-gray-300"
+              >
+                <FaYoutube className="w-6 h-6 md:w-10 md:h-10" />
               </a>
             </div>
           </div>

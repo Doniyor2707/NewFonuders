@@ -9,6 +9,7 @@ const MapComponent = () => {
       center={position}
       zoom={15}
       style={{ height: "300px", width: "100%", borderRadius: "25px" }}
+      zoomControl={false}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={position}>
