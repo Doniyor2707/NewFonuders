@@ -22,7 +22,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-6 mt-8 text-sm md:text-xl">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img src={Logo} alt="Logo" className="w-24 md:w-32" />
+            <img src={Logo} alt="Logo" className="w-28 md:w-40" />
           </div>
 
           {/* Bog‘lanish */}
