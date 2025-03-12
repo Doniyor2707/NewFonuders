@@ -11,7 +11,7 @@ const collectionsData = [
     title: "Yillik tajriba",
   },
   {
-    num: "4 000+",
+    num: "2 000+",
     title: "Mamnun o‘quvchilar",
   },
   {

@@ -3,14 +3,16 @@ function About() {
     <>
       <div className="flex justify-center items-center mb-9">
         <div className="card max-w-full w-full">
-          <video
-            className="w-full rounded-lg"
-            controls
-            poster="https://via.placeholder.com/800x400" // Videoning oldindan ko'rinishi uchun tasvir
-          >
-            <source src="/path/to/your/video.mp4" type="video/mp4" />
-            Sizning brauzeringiz videoni qo‘llab-quvvatlamaydi.
-          </video>
+          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/z7WIMyySMAE"
+              title="YouTube video player"
+
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </div>
 
@@ -23,19 +25,6 @@ function About() {
           <b className="color_red">two friends Ziyodbek Yusupov</b> and{" "}
           <b className="color_red">Abduqodir Juraqulov</b> who are{" "}
           <b className="color_red">MDIST graduates.</b>
-        </p>
-        <p className="text-center text-lg md:text-xl lg:text-3xl">
-          Our company has taught more than{" "}
-          <b className="color_red">2000 students</b> so far and made a huge
-          number of IELTS results with its students,{" "}
-          <b className="color_red">7.0 + band scores on average.</b>
-        </p>
-        <p className="text-center text-lg md:text-xl lg:text-3xl">
-          The name "Founders" is not just about two friends, but also it is our{" "}
-          <b className="color_red">motivated</b> and{" "}
-          <b className="color_red">passionate students</b> who will become
-          future <b className="color_red">leaders</b> and{" "}
-          <b className="color_red">founders</b> of successful companies.
         </p>
       </div>
     </>
