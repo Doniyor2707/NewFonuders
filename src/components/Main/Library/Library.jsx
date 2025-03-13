@@ -1,49 +1,40 @@
 import { useState } from "react";
-
-import Book from "../../../../public/assets/book.svg";
-
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
+// Public papkadagi rasmlarni to‘g‘ri chaqirish
+const levelSlides = [
+  { id: 1, image: "/assets/image1.png" },
+  { id: 2, image: "/assets/image2.png" },
+  { id: 3, image: "/assets/image3.png" },
+];
+
 function Library() {
-  const [title, setTitle] = useState("IELTS");
-
-  const slides = [{ id: 1, title: "IELTS", image: Book }];
-
   return (
-    <div
-      className="max-w-full "
-      style={{ border: "7px solid rgba(255, 255, 255, 1)" }}
-    >
-      {/* Title */}
-      <h2 className="md:text-4xl font-bold text-center text-gray-800">
-        {title}
-      </h2>
-
-      {/* Carousel */}
+    <div className="max-w-screen-lg mx-auto border-white">
+      {/* Level Carousel */}
       <Splide
         options={{
           type: "loop",
-          perPage: 4,
-          breakpoints: {
-            1024: { perPage: 3 }, // O‘rta ekranlar uchun
-            768: { perPage: 2 }, // Kichik ekranlar uchun
-            640: { perPage: 1 }, // Mobil uchun
-          },
-          pagination: false,
+          perPage: 1,
+          pagination: true,
           arrows: true,
+          focus: "right",
+          gap: "1rem",
+          breakpoints: {
+            1024: { perPage: 1 }, // Katta ekranlar
+            768: { perPage: 1 }, // O'rta ekranlar
+            480: { perPage: 1 }, // Kichik ekranlar
+          },
         }}
       >
-        {slides.map((slide, index) => (
-          <SplideSlide key={index}>
-            <div className="flex flex-col items-center">
-              {/* Rasm kartasi */}
-              <div className="relative rounded-lg overflow-hidden">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="max-w-md h-auto object-cover"
-                />
-              </div>
+        {levelSlides.map((slide) => (
+          <SplideSlide key={slide.id}>
+            <div className="flex justify-center">
+              <img
+                src={slide.image}
+                alt={`Level ${slide.id}`}
+                className="w-full h-40 md:h-96 object-contain"
+              />
             </div>
           </SplideSlide>
         ))}
