@@ -1,0 +1,1 @@
+import{j as s,O as t}from"./index-Hl-Xmuri.js";import{N as a}from"./Navbar-DbpSVuYF.js";function n(){return s.jsxs(s.Fragment,{children:[s.jsx(a,{}),s.jsx("main",{className:"align-elements",children:s.jsx(t,{})})]})}export{n as default};
