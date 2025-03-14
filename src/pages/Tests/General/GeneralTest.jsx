@@ -1,48 +1,39 @@
 import { useState } from "react";
-
-const questions = [
-  {
-    question: "_______you interested in sport?",
-    options: ["be", "am", "is", "are"],
-    answer: "are",
-  },
-  {
-    question: "My_____ is a writer and his books are very popular.",
-    options: ["aunt", "uncle", "sister", "mother"],
-    answer: "uncle",
-  },
-  {
-    question: "Paul is very _____. He’s very good at art.",
-    options: ["honest", "friendly", "polite", "creative"],
-    answer: "creative",
-  },
-];
+import questions from "../questions.json"; // JSON faylni import qilish
 
 function GeneralTest() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null); // Tanlangan variant
 
   const handleAnswer = (selectedOption) => {
+    if (!selectedOption) return; // Agar allaqachon bosilgan bo'lsa, hech narsa qilmaydi
+    setSelectedOption(selectedOption); // Variantni belgilash
+
     if (selectedOption === questions[currentQuestion].answer) {
       setScore(score + 1);
     }
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowResult(true);
-    }
+    setTimeout(() => {
+      const nextQuestion = currentQuestion + 1;
+      if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+        setSelectedOption(null); // Keyingi savolga o'tishda variantni tozalash
+      } else {
+        setShowResult(true);
+      }
+    }, 500); // Yarim soniya delay
   };
 
   const restartQuiz = () => {
     setCurrentQuestion(0);
     setScore(0);
     setShowResult(false);
+    setSelectedOption(null);
   };
 
   return (
-    <div className="flex items-center justify-center w-full max-w-5xl mx-auto bg-white rounded-[30px] py-11 shadow-[15px_15px_40px_0px_rgba(255,0,0,0.3)] border border-[rgba(236,0,0,1)] ">
+    <div className="flex items-center justify-center w-full max-w-5xl mx-auto bg-white rounded-[30px] py-11 shadow-[15px_15px_40px_0px_rgba(255,0,0,0.3)] border border-[rgba(236,0,0,1)]">
       {showResult ? (
         <div className="flex items-center justify-center flex-col">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
@@ -60,16 +51,22 @@ function GeneralTest() {
         </div>
       ) : (
         <div className="px-4">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">
-            <span>{currentQuestion + 1}) </span>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900 border-l-4 border-red-500 pl-4">
+            <span className="text-red-500">{currentQuestion + 1})</span>{" "}
             {questions[currentQuestion].question}
           </h2>
+
           <div className="space-y-4">
             {questions[currentQuestion].options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswer(option)}
-                className="block w-full bg-gray-100 hover:bg-red-500 hover:text-white text-gray-800 py-3 rounded-xl text-lg font-medium transition-all shadow-md"
+                disabled={selectedOption !== null} // Agar bitta bosilgan bo'lsa, disable
+                className={`block w-full py-3 rounded-xl text-lg font-medium transition-all shadow-md ${
+                  selectedOption === option
+                    ? "bg-red-500 text-white" // Bosilgan variant qizil bo'ladi
+                    : "bg-gray-100 text-gray-800"
+                }`}
               >
                 {option}
               </button>
