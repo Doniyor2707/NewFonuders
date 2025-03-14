@@ -33,7 +33,7 @@ function GeneralTest() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full max-w-5xl mx-auto bg-white rounded-[30px] py-11 shadow-[15px_15px_40px_0px_rgba(255,0,0,0.3)] border border-[rgba(236,0,0,1)]">
+    <div className="flex flex-col items-center justify-center w-full max-w-5xl mx-auto bg-white rounded-[30px] py-11 shadow-[15px_15px_40px_0px_rgba(255,0,0,0.3)] border border-[rgba(236,0,0,1)] px-6">
       {showResult ? (
         <div className="flex items-center justify-center flex-col">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
@@ -44,16 +44,23 @@ function GeneralTest() {
           </p>
           <button
             onClick={restartQuiz}
-            className="mt-6 mx-auto bg-red-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg"
+            className="mt-6 bg-red-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg"
           >
             Qayta boshlash
           </button>
         </div>
       ) : (
-        <div className="px-4">
+        <div className="w-full">
+          {/* Progress bar */}
+          <div className="w-full bg-gray-200 rounded-full h-2.5 mb-6 overflow-hidden">
+            <div
+              className="bg-red-500 h-2.5 rounded-full transition-all duration-500 ease-in-out"
+              style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+            ></div>
+          </div>
+
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-900 border-l-4 border-red-500 pl-4">
-            <span className="text-red-500">{currentQuestion + 1})</span>{" "}
-            {questions[currentQuestion].question}
+            <span className="text-red-500">{currentQuestion + 1})</span> {questions[currentQuestion].question}
           </h2>
 
           <div className="space-y-4">
